@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="forma.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forma</title>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div class="hd__logo">HTML5 Formų kūrimas</div>
+      </header>
+      <main>
+        <form action="forma.html">
+          <!-- Prisijungimo duomenys blokas: -->
+          <fieldset>
+            <legend>Prisijungimo duomenys</legend>
+            <label for="vartotojo_vardas">Vartotojo vardas:</label>
+            <input
+              type="text"
+              autofocus="autofocus"
+              name="username"
+              id="vartotojo_vardas"
+              title="Vartotojo vardas"
+              required
+            />
+            <br />
+            <label>Slaptažodis:</label>
+            <input
+              type="password"
+              placeholder="Naujas slaptažodis"
+              title="Slaptažodis"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Pakartokite slaptažodį"
+              name="password"
+              title="Pakartokite slaptažodį"
+              required
+            />
+            <br />
+            <label for="email">El. paštas:</label>
+            <input
+              type="email"
+              pattern=".+@panko.lt"
+              placeholder="Tik su @panko.lt"
+              name="email"
+              title="El. paštas"
+              required
+            />
+            <br />
+            <label>Jūsų nuotrauka:</label>
+            <button>Pasirinkti failą</button>
+            <label>Nepasirinktas joks failas</label>
+          </fieldset>
+          <br />
+          <!-- Asmeninė informacija blokas: -->
+          <fieldset>
+            <legend>Asmeninė informacija</legend>
+            <label>Vardas:</label>
+            <input
+              type="text"
+              placeholder="Įveskite savo vardą"
+              name="firstname"
+              title="Vardas"
+              required
+            />
+            <br />
+            <label>Pavardė:</label>
+            <input
+              type="text"
+              placeholder="Įveskite savo pavardę"
+              name="lastname"
+              title="Pavardė"
+              required
+            />
+            <br />
+            <label>Lytis:</label>
+            <input
+              type="radio"
+              name="gender"
+              value="male"
+              required
+              title="Vyras"
+            />
+            Vyras
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+              required
+              title="Moteris"
+            />
+            Moteris
+            <br />
+            <label>Amžius:</label>
+            <input
+              type="text"
+              maxlength="4"
+              value="0"
+              name="age"
+              title="Amžius"
+              required
+            />
+            <br />
+            <label>Gimimo data:</label>
+            <input
+              type="date"
+              value="mmmm.mm.dd"
+              name="birthdate"
+              title="Gimimo data"
+              required
+            />
+            <br />
+            <label>Mob. telefonas</label>
+            <input
+              pattern="[+370][0-9]{11}"
+              type="tel"
+              placeholder="+370 0 000 000"
+              required
+              name="phone_number"
+              title="Mob. telefonas"
+            />
+          </fieldset>
+          <br />
+          <!-- Jūsų sugebėjimai ir pomėgiai blokas: -->
+          <fieldset>
+            <legend>Jūsų sugebėjimai ir pomėgiai</legend>
+            <label>Kurias kalbas mokate?:</label>
+            <input
+              type="checkbox"
+              name="language_en"
+              value="en"
+              title="Anglų"
+            />
+            <label> Anglų</label>
+            <input
+              type="checkbox"
+              name="language_pl"
+              value="pl"
+              title="Lenkų"
+            />
+            <label> Lenkų</label>
+            <input
+              type="checkbox"
+              name="language_fr"
+              value="fr"
+              title="Prancūzų"
+            />
+            <label> Prancūzų</label>
+            <input type="checkbox" name="language_ru" value="ru" title="Rusų" />
+            <label> Rusų</label>
+            <input
+              type="checkbox"
+              name="language_de"
+              value="de"
+              title="Vokiečių"
+            />
+            <label> Vokiečių</label>
+            <br />
+            <label>Jūsų mėgstama spalva:</label>
+            <input type="color" name="color" title="Spalva" />
+            <br />
+            <label>Polinkis į ekstremalumą: Mažas</label>
+            <input
+              type="range"
+              name="extreme"
+              title="Polinkis į ekstremalumą"
+            />
+            <label>Didelis</label>
+            <br />
+            <label>Ar turi vairuotojo teises:</label>
+            <select name="drivers_license">
+              <option value="yes" title="Taip">Taip</option>
+              <option value="no" title="Ne">Ne</option>
+              <option value="planning" title="Planuoju turėti">
+                Planuoju turėti
+              </option>
+            </select>
+
+            <br />
+            <label>Apie save daugiau:</label>
+            <br />
+            <input
+              id="apiesave"
+              type="text"
+              name="aboutme"
+              title="Apie save daugiau"
+              maxlength="50"
+            />
+          </fieldset>
+          <button>Registruotis</button>
+        </form>
+      </main>
+      <footer>
+        <div class="ft__rights"><i>Panevėžio kolegija</i></div>
+      </footer>
+    </div>
+  </body>
+</html>
