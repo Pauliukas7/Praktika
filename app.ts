@@ -1,8 +1,8 @@
-function minusOneCycle(a: number): number {
-  for (let b = a; b > 0; b--) {
-    console.log(a + " skaičius mažinamas po 1: " + b);
-  }
-  return a;
+function addNumbers(a: number, b: number): number {
+  return a + b;
 }
 
-minusOneCycle(10);
+var sum = addNumbers(10, 15);
+console.log("Sum of the tow numbers is: " + sum);
+
+document.getElementById("app")?.append("Sum of the two numbers is: " + sum);
