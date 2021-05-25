@@ -5,4 +5,24 @@ function addNumbers(a, b) {
 }
 var sum = addNumbers(10, 15);
 console.log("Sum of the tow numbers is: " + sum);
-(_a = document.getElementById("app")) === null || _a === void 0 ? void 0 : _a.append("Sum of the two numbers is: " + sum);
+var tourism = [
+    "1",
+    "Traku_pilis",
+    "Malborko_pilis",
+    "Laju_takas",
+    "Krekenavos_turizmo_centras",
+    "Rundales_pilis",
+    "Smetonos_dvaras",
+];
+var template = [
+    "Traku_pilis",
+    "Laju_takas",
+    "Krekenavos_turizmo_centras",
+    "Smetonos_dvaras",
+];
+function getLithuaniaPlaces(tourism, template) {
+    var naujas = tourism.filter(function (vietove) { return template.includes(vietove); });
+    return naujas;
+}
+var result = getLithuaniaPlaces(tourism, template);
+(_a = document.getElementById("app")) === null || _a === void 0 ? void 0 : _a.append(result.toString());
