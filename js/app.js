@@ -33,5 +33,15 @@ function arrayWithoutNumbers(tourism) {
     });
     return naujas;
 }
-var result = arrayWithoutNumbers(tourism);
+function getCastles(tourism) {
+    var castles = new Array();
+    tourism.forEach(function (i) {
+        if (i.includes("_pilis")) {
+            i = i.replace("_pilis", "");
+            castles.push(i);
+        }
+    });
+    return castles;
+}
+var result = getCastles(tourism);
 (_a = document.getElementById("app")) === null || _a === void 0 ? void 0 : _a.append(result.toString());

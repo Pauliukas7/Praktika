@@ -35,6 +35,16 @@ function arrayWithoutNumbers(tourism: Tourism): Tourism {
   return naujas;
 }
 
-const result = arrayWithoutNumbers(tourism);
+function getCastles(tourism: Tourism): Tourism {
+  const castles: Tourism = new Array();
+  tourism.forEach((i) => {
+    if (i.includes("_pilis")) {
+      i = i.replace("_pilis", "");
+      castles.push(i);
+    }
+  });
+  return castles;
+}
+const result = getCastles(tourism);
 
 document.getElementById("app")?.append(result.toString());
