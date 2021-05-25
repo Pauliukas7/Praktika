@@ -1,0 +1,19 @@
+{
+  "name": "praktika-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pauliukas7/Praktika.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pauliukas7/Praktika/issues"
+  },
+  "homepage": "https://github.com/Pauliukas7/Praktika#readme"
+}
