@@ -1,7 +1,8 @@
-function subtractNumbers(a: number, b: number): number {
-  return a - b;
+function minusOneCycle(a: number): number {
+  for (let b = a; b > 0; b--) {
+    console.log(a + " skaičius mažinamas po 1: " + b);
+  }
+  return a;
 }
 
-var difference = subtractNumbers(10, 15);
-
-console.log("Difference of the tow numbers is: " + difference);
+minusOneCycle(10);
