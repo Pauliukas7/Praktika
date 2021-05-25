@@ -24,5 +24,14 @@ function getLithuaniaPlaces(tourism, template) {
     var naujas = tourism.filter(function (vietove) { return template.includes(vietove); });
     return naujas;
 }
-var result = getLithuaniaPlaces(tourism, template);
+function arrayWithoutNumbers(tourism) {
+    var naujas = [];
+    tourism.filter(function (item) {
+        if (isNaN(Number(item))) {
+            naujas.push(item);
+        }
+    });
+    return naujas;
+}
+var result = arrayWithoutNumbers(tourism);
 (_a = document.getElementById("app")) === null || _a === void 0 ? void 0 : _a.append(result.toString());

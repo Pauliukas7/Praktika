@@ -25,6 +25,16 @@ function getLithuaniaPlaces(tourism: Tourism, template: Tourism): Tourism {
   const naujas = tourism.filter((vietove) => template.includes(vietove));
   return naujas;
 }
-const result = getLithuaniaPlaces(tourism, template);
+function arrayWithoutNumbers(tourism: Tourism): Tourism {
+  let naujas: Tourism = [];
+  tourism.filter((item) => {
+    if (isNaN(Number(item))) {
+      naujas.push(item);
+    }
+  });
+  return naujas;
+}
+
+const result = arrayWithoutNumbers(tourism);
 
 document.getElementById("app")?.append(result.toString());
