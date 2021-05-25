@@ -43,5 +43,9 @@ function getCastles(tourism) {
     });
     return castles;
 }
-var result = getCastles(tourism);
+function getDetails(tourism) {
+    var info = tourism.map(function (item) { return item + " - " + item.length; });
+    return info;
+}
+var result = getDetails(tourism);
 (_a = document.getElementById("app")) === null || _a === void 0 ? void 0 : _a.append(result.toString());

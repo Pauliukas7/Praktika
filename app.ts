@@ -45,6 +45,11 @@ function getCastles(tourism: Tourism): Tourism {
   });
   return castles;
 }
-const result = getCastles(tourism);
+
+function getDetails(tourism: Tourism) {
+  const info = tourism.map((item) => item + " - " + item.length);
+  return info;
+}
+const result = getDetails(tourism);
 
 document.getElementById("app")?.append(result.toString());
