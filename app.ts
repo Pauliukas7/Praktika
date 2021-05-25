@@ -1,7 +1,7 @@
-function addNumbers(a: number, b: number): number {
-  return a + b;
+function subtractNumbers(a: number, b: number): number {
+  return a - b;
 }
 
-var sum = addNumbers(10, 15);
+var difference = subtractNumbers(10, 15);
 
-console.log("Sum of the tow numbers is: " + sum);
+console.log("Difference of the tow numbers is: " + difference);
