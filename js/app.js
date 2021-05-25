@@ -1,5 +1,4 @@
 "use strict";
-var _a;
 function addNumbers(a, b) {
     return a + b;
 }
@@ -47,5 +46,17 @@ function getDetails(tourism) {
     var info = tourism.map(function (item) { return item + " - " + item.length; });
     return info;
 }
-var result = getDetails(tourism);
-(_a = document.getElementById("app")) === null || _a === void 0 ? void 0 : _a.append(result.toString());
+function toObject(tourism) {
+    return tourism.reduce(function (acc, item) {
+        acc.push({ title: item });
+        return acc;
+    }, []);
+}
+var result = toObject(tourism);
+var htmlResult = "";
+result.forEach(function (item) {
+    htmlResult += "title: " + item.title + "<br>";
+});
+var el = document.getElementById("app");
+if (el)
+    el.innerHTML = htmlResult;

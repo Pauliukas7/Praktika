@@ -50,6 +50,24 @@ function getDetails(tourism: Tourism) {
   const info = tourism.map((item) => item + " - " + item.length);
   return info;
 }
-const result = getDetails(tourism);
+type ToursismObj = {
+  title: string;
+};
 
-document.getElementById("app")?.append(result.toString());
+function toObject(tourism: Tourism): Array<ToursismObj> {
+  return tourism.reduce((acc, item) => {
+    acc.push({ title: item });
+    return acc;
+  }, <Array<ToursismObj>>[]);
+}
+
+const result = toObject(tourism);
+
+let htmlResult: string = "";
+result.forEach((item: ToursismObj) => {
+  htmlResult += `title: ${item.title}<br>`;
+});
+
+const el = document.getElementById("app");
+
+if (el) el.innerHTML = htmlResult;
