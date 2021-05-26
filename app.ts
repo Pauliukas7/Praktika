@@ -66,8 +66,10 @@ function toObject(tourism: Tourism): Array<ToursismObj> {
 
 const result = toObject(tourism);
 
+const filtered = result.filter((item) => !item.title.includes("turizmo"));
+
 let htmlResult: string = "";
-result.forEach((item: ToursismObj) => {
+filtered.forEach((item: ToursismObj) => {
   htmlResult += `id: ${item.id}, title: ${item.title}<br>`;
 });
 
