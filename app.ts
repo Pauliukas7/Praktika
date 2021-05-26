@@ -68,8 +68,15 @@ const result = toObject(tourism);
 
 const filtered = result.filter((item) => !item.title.includes("turizmo"));
 
+type VisitedPlaces = Array<number>;
+const visitedPlaces: VisitedPlaces = [3, 5, 7];
+
+const numeriai = result.filter((item) => {
+  if (visitedPlaces.includes(item.id)) return true;
+});
+
 let htmlResult: string = "";
-filtered.forEach((item: ToursismObj) => {
+numeriai.forEach((item: ToursismObj) => {
   htmlResult += `id: ${item.id}, title: ${item.title}<br>`;
 });
 
