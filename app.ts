@@ -51,12 +51,15 @@ function getDetails(tourism: Tourism) {
   return info;
 }
 type ToursismObj = {
+  id: number;
   title: string;
 };
 
 function toObject(tourism: Tourism): Array<ToursismObj> {
+  let index = 0;
   return tourism.reduce((acc, item) => {
-    acc.push({ title: item });
+    index++;
+    acc.push({ id: index, title: item });
     return acc;
   }, <Array<ToursismObj>>[]);
 }
@@ -65,7 +68,7 @@ const result = toObject(tourism);
 
 let htmlResult: string = "";
 result.forEach((item: ToursismObj) => {
-  htmlResult += `title: ${item.title}<br>`;
+  htmlResult += `id: ${item.id}, title: ${item.title}<br>`;
 });
 
 const el = document.getElementById("app");

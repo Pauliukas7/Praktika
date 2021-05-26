@@ -47,15 +47,17 @@ function getDetails(tourism) {
     return info;
 }
 function toObject(tourism) {
+    var index = 0;
     return tourism.reduce(function (acc, item) {
-        acc.push({ title: item });
+        index++;
+        acc.push({ id: index, title: item });
         return acc;
     }, []);
 }
 var result = toObject(tourism);
 var htmlResult = "";
 result.forEach(function (item) {
-    htmlResult += "title: " + item.title + "<br>";
+    htmlResult += "id: " + item.id + ", title: " + item.title + "<br>";
 });
 var el = document.getElementById("app");
 if (el)
