@@ -75,7 +75,9 @@ let htmlResult: string = "";
 const tarpai = result.map((item) => {
   return { ...item, title: item.title.split("_").join(" ") };
 });
-
+function getData() {
+  if (el) el.innerHTML = htmlResult;
+}
 tarpai.forEach((item: ToursismObj) => {
   if (visitedPlaces.includes(item.id)) {
     htmlResult += `id: ${item.id}, title: ${item.title}<br>`.strike();
@@ -85,5 +87,3 @@ tarpai.forEach((item: ToursismObj) => {
 });
 
 const el = document.getElementById("app");
-
-if (el) el.innerHTML = htmlResult;

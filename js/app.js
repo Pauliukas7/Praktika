@@ -72,6 +72,10 @@ var htmlResult = "";
 var tarpai = result.map(function (item) {
     return __assign(__assign({}, item), { title: item.title.split("_").join(" ") });
 });
+function getData() {
+    if (el)
+        el.innerHTML = htmlResult;
+}
 tarpai.forEach(function (item) {
     if (visitedPlaces.includes(item.id)) {
         htmlResult += ("id: " + item.id + ", title: " + item.title + "<br>").strike();
@@ -81,5 +85,3 @@ tarpai.forEach(function (item) {
     }
 });
 var el = document.getElementById("app");
-if (el)
-    el.innerHTML = htmlResult;
