@@ -71,13 +71,13 @@ const filtered = result.filter((item) => !item.title.includes("turizmo"));
 type VisitedPlaces = Array<number>;
 const visitedPlaces: VisitedPlaces = [3, 5, 7];
 
-const numeriai = result.filter((item) => {
-  if (visitedPlaces.includes(item.id)) return true;
-});
-
 let htmlResult: string = "";
-numeriai.forEach((item: ToursismObj) => {
-  htmlResult += `id: ${item.id}, title: ${item.title}<br>`;
+result.forEach((item: ToursismObj) => {
+  if (visitedPlaces.includes(item.id)) {
+    htmlResult += `id: ${item.id}, title: ${item.title}<br>`.strike();
+  } else {
+    htmlResult += `id: ${item.id}, title: ${item.title}<br>`;
+  }
 });
 
 const el = document.getElementById("app");
