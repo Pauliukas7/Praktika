@@ -73,15 +73,28 @@ var tarpai = result.map(function (item) {
     return __assign(__assign({}, item), { title: item.title.split("_").join(" ") });
 });
 function getData() {
+    var lentele = (document.getElementById("lentele"));
+    lentele.hidden = false;
+    tarpai.forEach(function (item) {
+        var eilute = lentele.insertRow(-1);
+        var nr = eilute.insertCell(0);
+        var pavadinimas = eilute.insertCell(1);
+        var aplankyta = eilute.insertCell(2);
+        nr.setAttribute("style", "border: 1px solid black;");
+        pavadinimas.setAttribute("style", "border: 1px solid black;");
+        aplankyta.setAttribute("style", "border: 1px solid black;");
+        if (visitedPlaces.includes(item.id)) {
+            htmlResult += nr.innerHTML = item.id.toString().strike();
+            pavadinimas.innerHTML = item.title.strike();
+            aplankyta.innerHTML = "taip";
+        }
+        else {
+            htmlResult += nr.innerHTML = item.id.toString();
+            pavadinimas.innerHTML = item.title;
+            aplankyta.innerHTML = "";
+        }
+    });
+    var el = document.getElementById("app");
     if (el)
         el.innerHTML = htmlResult;
 }
-tarpai.forEach(function (item) {
-    if (visitedPlaces.includes(item.id)) {
-        htmlResult += ("id: " + item.id + ", title: " + item.title + "<br>").strike();
-    }
-    else {
-        htmlResult += "id: " + item.id + ", title: " + item.title + "<br>";
-    }
-});
-var el = document.getElementById("app");
