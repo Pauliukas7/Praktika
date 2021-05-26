@@ -98,3 +98,8 @@ function getData() {
     if (el)
         el.innerHTML = htmlResult;
 }
+function insertData() {
+    var val = document.getElementById("place")
+        .value;
+    tarpai.push({ id: tarpai.length + 1, title: val });
+}

@@ -102,3 +102,8 @@ function getData() {
   const el = document.getElementById("app");
   if (el) el.innerHTML = htmlResult;
 }
+function insertData() {
+  const val: string = (document.getElementById("place") as HTMLInputElement)
+    .value;
+  tarpai.push({ id: tarpai.length + 1, title: val });
+}
