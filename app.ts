@@ -72,7 +72,11 @@ type VisitedPlaces = Array<number>;
 const visitedPlaces: VisitedPlaces = [3, 5, 7];
 
 let htmlResult: string = "";
-result.forEach((item: ToursismObj) => {
+const tarpai = result.map((item) => {
+  return { ...item, title: item.title.split("_").join(" ") };
+});
+
+tarpai.forEach((item: ToursismObj) => {
   if (visitedPlaces.includes(item.id)) {
     htmlResult += `id: ${item.id}, title: ${item.title}<br>`.strike();
   } else {

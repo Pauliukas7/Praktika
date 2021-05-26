@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 function addNumbers(a, b) {
     return a + b;
 }
@@ -57,13 +68,17 @@ function toObject(tourism) {
 var result = toObject(tourism);
 var filtered = result.filter(function (item) { return !item.title.includes("turizmo"); });
 var visitedPlaces = [3, 5, 7];
-var numeriai = result.filter(function (item) {
-    if (visitedPlaces.includes(item.id))
-        return true;
-});
 var htmlResult = "";
-numeriai.forEach(function (item) {
-    htmlResult += "id: " + item.id + ", title: " + item.title + "<br>";
+var tarpai = result.map(function (item) {
+    return __assign(__assign({}, item), { title: item.title.split("_").join(" ") });
+});
+tarpai.forEach(function (item) {
+    if (visitedPlaces.includes(item.id)) {
+        htmlResult += ("id: " + item.id + ", title: " + item.title + "<br>").strike();
+    }
+    else {
+        htmlResult += "id: " + item.id + ", title: " + item.title + "<br>";
+    }
 });
 var el = document.getElementById("app");
 if (el)
