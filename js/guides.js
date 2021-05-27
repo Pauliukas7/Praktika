@@ -125,6 +125,22 @@ function reSort(langs) {
     langs.sort();
     return langs;
 }
+function compareLang(languageList1, languageList2) {
+    return languageList1.some(function (l) { return languageList2.includes(l); });
+}
+function compareGoals(goal1, goal2) {
+    return goal1.some(function (w) { return goal2.includes(w); });
+}
+function getClients(tourGuide, tourists) {
+    return tourists.filter(function (tourist) {
+        return tourist.languages.find(function (lang) { return tourGuide.languages.includes(lang); });
+    });
+}
+var guideWithClients = tourGuides.map(function (guide) { return ({
+    guideName: guide.firstName,
+    clients: getClients(guide, tourists),
+}); });
+console.log(guideWithClients);
 var abcGuideLang = reSort(guideLang);
 var abcTuristaiLang = reSort(turistaiLang);
 var guideColumn = "";
@@ -137,7 +153,9 @@ abcTuristaiLang.forEach(function (lang) {
 });
 var gidaiHtml = document.getElementById("gidai");
 var turistaiHtml = document.getElementById("turistai");
-if (gidaiHtml)
-    gidaiHtml.innerHTML = guideColumn;
-if (turistaiHtml)
-    turistaiHtml.innerHTML = turistaiColumn;
+var guidesClients = document.getElementById("guideswithclients");
+var guidesClientsHtml = "";
+//if (gidaiHtml) gidaiHtml.innerHTML = guideColumn;
+//if (turistaiHtml) turistaiHtml.innerHTML = turistaiColumn;
+if (guidesClients)
+    guidesClients.innerHTML = guideWithClients.toString();

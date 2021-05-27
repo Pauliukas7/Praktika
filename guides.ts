@@ -151,6 +151,34 @@ function reSort(langs: Array<string>): Array<string> {
   langs.sort();
   return langs;
 }
+
+function compareLang(
+  languageList1: string[],
+  languageList2: string[]
+): boolean {
+  return languageList1.some((l) => languageList2.includes(l));
+}
+
+function compareGoals(goal1: number[], goal2: number[]): boolean {
+  return goal1.some((w) => goal2.includes(w));
+}
+
+/*function getClients(
+  tourGuide: Guide,
+  tourists: Array<Tourist>
+): Array<Tourist> {
+  return tourists.filter((tourist) =>
+    tourist.languages.find((lang) => tourGuide.languages.includes(lang)) && (tourist) =>
+    tourist.languages.find((lang) => tourGuide.languages.includes(lang))
+  );
+}
+
+const guideWithClients = tourGuides.map((guide) => ({
+  guideName: guide.firstName,
+  clients: getClients(guide, tourists),
+}));
+console.log(guideWithClients); */
+
 const abcGuideLang = reSort(guideLang);
 const abcTuristaiLang = reSort(turistaiLang);
 
@@ -165,5 +193,9 @@ abcTuristaiLang.forEach((lang) => {
 
 const gidaiHtml = document.getElementById("gidai");
 const turistaiHtml = document.getElementById("turistai");
-if (gidaiHtml) gidaiHtml.innerHTML = guideColumn;
-if (turistaiHtml) turistaiHtml.innerHTML = turistaiColumn;
+const guidesClients = document.getElementById("guideswithclients");
+let guidesClientsHtml: string = "";
+
+//if (gidaiHtml) gidaiHtml.innerHTML = guideColumn;
+//if (turistaiHtml) turistaiHtml.innerHTML = turistaiColumn;
+//if (guidesClients) guidesClients.innerHTML = guideWithClients.toString();
