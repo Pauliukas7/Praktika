@@ -107,3 +107,19 @@ function insertData() {
     .value;
   tarpai.push({ id: tarpai.length + 1, title: val });
 }
+function subtractNumbers(a: number, b: number): number {
+  return a - b;
+}
+
+var difference = subtractNumbers(10, 15);
+
+console.log("Difference of the two numbers is: " + difference);
+
+function minusOneCycle(a: number): number {
+  for (let b = a; b > 0; b--) {
+    console.log(a + " skaičius mažinamas po 1: " + b);
+  }
+  return a;
+}
+
+minusOneCycle(10);
