@@ -147,12 +147,19 @@ function getAllLanguages<T extends GenParams>(people: Array<T>): Array<string> {
 const guideLang = getAllLanguages(tourGuides);
 const turistaiLang = getAllLanguages(tourists);
 
+function reSort(langs: Array<string>): Array<string> {
+  langs.sort();
+  return langs;
+}
+const abcGuideLang = reSort(guideLang);
+const abcTuristaiLang = reSort(turistaiLang);
+
 let guideColumn: string = "";
-guideLang.forEach((lang) => {
+abcGuideLang.forEach((lang) => {
   guideColumn += `${lang}, <br>`;
 });
 let turistaiColumn: string = "";
-turistaiLang.forEach((lang) => {
+abcTuristaiLang.forEach((lang) => {
   turistaiColumn += `${lang}, <br>`;
 });
 

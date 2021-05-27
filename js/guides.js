@@ -121,12 +121,18 @@ function getAllLanguages(people) {
 }
 var guideLang = getAllLanguages(tourGuides);
 var turistaiLang = getAllLanguages(tourists);
+function reSort(langs) {
+    langs.sort();
+    return langs;
+}
+var abcGuideLang = reSort(guideLang);
+var abcTuristaiLang = reSort(turistaiLang);
 var guideColumn = "";
-guideLang.forEach(function (lang) {
+abcGuideLang.forEach(function (lang) {
     guideColumn += lang + ", <br>";
 });
 var turistaiColumn = "";
-turistaiLang.forEach(function (lang) {
+abcTuristaiLang.forEach(function (lang) {
     turistaiColumn += lang + ", <br>";
 });
 var gidaiHtml = document.getElementById("gidai");
