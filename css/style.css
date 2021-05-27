@@ -1,4 +1,5 @@
 .block {
+  background-color: white;
   height: 100px;
   width: 100px;
   color: black;
@@ -7,4 +8,9 @@
   border-width: 2px;
   padding: 10px;
   display: inline-block;
+}
+.blocks {
+  background-color: blue;
+  height: 150px;
+  width: 680px;
 }
