@@ -1,8 +1,9 @@
 .block {
+  display: inline-block;
   background-color: blue;
-  height: 50px;
+  height: 200px;
   width: 200px;
   color: white;
   border: black;
-  box-shadow: 10px 10px #696969;
+  border-radius: 50%;
 }
