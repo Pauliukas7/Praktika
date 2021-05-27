@@ -1,7 +1,8 @@
 .block {
-  background-image: url(/laju.jpg);
-  height: 200px;
+  background-color: blue;
+  height: 50px;
   width: 200px;
   color: white;
-  background-size: 100% 100%;
+  border: black;
+  box-shadow: 10px 10px #696969;
 }
