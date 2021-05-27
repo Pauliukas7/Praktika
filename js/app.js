@@ -67,7 +67,7 @@ function toObject(tourism) {
 }
 var result = toObject(tourism);
 var filtered = result.filter(function (item) { return !item.title.includes("turizmo"); });
-var visitedPlaces = [3, 5, 7];
+var visitedPlaces2 = [3, 5, 7];
 var htmlResult = "";
 var tarpai = result.map(function (item) {
     return __assign(__assign({}, item), { title: item.title.split("_").join(" ") });
@@ -83,7 +83,7 @@ function getData() {
         nr.setAttribute("style", "border: 1px solid black;");
         pavadinimas.setAttribute("style", "border: 1px solid black;");
         aplankyta.setAttribute("style", "border: 1px solid black;");
-        if (visitedPlaces.includes(item.id)) {
+        if (visitedPlaces2.includes(item.id)) {
             htmlResult += nr.innerHTML = item.id.toString().strike();
             pavadinimas.innerHTML = item.title.strike();
             aplankyta.innerHTML = "taip";
@@ -112,6 +112,5 @@ function minusOneCycle(a) {
     for (var b = a; b > 0; b--) {
         console.log(a + " skaičius mažinamas po 1: " + b);
     }
-    return a;
 }
 minusOneCycle(10);

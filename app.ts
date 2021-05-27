@@ -69,7 +69,7 @@ const result = toObject(tourism);
 const filtered = result.filter((item) => !item.title.includes("turizmo"));
 
 type VisitedPlaces = Array<number>;
-const visitedPlaces: VisitedPlaces = [3, 5, 7];
+const visitedPlaces2: VisitedPlaces = [3, 5, 7];
 
 let htmlResult: string = "";
 const tarpai = result.map((item) => {
@@ -89,7 +89,7 @@ function getData() {
     pavadinimas.setAttribute("style", "border: 1px solid black;");
     aplankyta.setAttribute("style", "border: 1px solid black;");
 
-    if (visitedPlaces.includes(item.id)) {
+    if (visitedPlaces2.includes(item.id)) {
       htmlResult += nr.innerHTML = item.id.toString().strike();
       pavadinimas.innerHTML = item.title.strike();
       aplankyta.innerHTML = "taip";
@@ -115,11 +115,10 @@ var difference = subtractNumbers(10, 15);
 
 console.log("Difference of the two numbers is: " + difference);
 
-function minusOneCycle(a: number): number {
+function minusOneCycle(a: number) {
   for (let b = a; b > 0; b--) {
     console.log(a + " skaičius mažinamas po 1: " + b);
   }
-  return a;
 }
 
 minusOneCycle(10);
