@@ -1,9 +1,10 @@
 .block {
-  display: inline-block;
-  background-color: blue;
-  height: 200px;
-  width: 200px;
-  color: white;
+  height: 100px;
+  width: 100px;
+  color: black;
   border: black;
-  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  padding: 10px;
+  display: inline-block;
 }
