@@ -4,11 +4,71 @@
   height: 50px;
   color: black;
   border: solid 1px #666;
-  display: inline-block;
+  display: none;
+  position: absolute;
 }
 .container {
   background-color: blue;
-  width: 520px;
+  width: 526px;
   border: solid red 1px;
   grid-auto-columns: minmax(100px, auto);
+}
+.btn:hover + .one {
+  display: block;
+}
+.one:hover {
+  display: block;
+}
+.one:hover + .two {
+  display: block;
+  margin-top: 40px;
+  margin-left: 8px;
+}
+.two:hover {
+  display: block;
+  margin-top: 40px;
+  margin-left: 8px;
+}
+.two:hover + .three {
+  display: block;
+  margin-top: 90px;
+  margin-left: 16px;
+}
+.three:hover {
+  display: block;
+  margin-top: 90px;
+  margin-left: 16px;
+}
+.three:hover + .one {
+  display: block;
+}
+.three:hover + .two {
+  display: block;
+  margin-top: 40px;
+  margin-left: 8px;
+}
+.three:hover + .four {
+  display: block;
+  margin-top: 140px;
+  margin-left: 24px;
+}
+.four:hover {
+  display: block;
+  margin-top: 140px;
+  margin-left: 24px;
+}
+.four:hover + .three {
+  display: block;
+  margin-top: 90px;
+  margin-left: 16px;
+}
+.four:hover + .five {
+  display: block;
+  margin-top: 190px;
+  margin-left: 32px;
+}
+.five:hover {
+  display: block;
+  margin-top: 190px;
+  margin-left: 32px;
 }
